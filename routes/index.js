@@ -2,16 +2,21 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
+// Handles node requests for node's "Home" page, '/', renders index
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
 /*  GET Hello World page. */
+// Handles node requests for helloworld subpage, '/', renders helloworld
 router.get('/helloworld', function(req, res)  {
-	res.render('helloworld', {title: 'Hello, World! This is Doug' });
+	res.render('helloworld', {title: 'Hello, World! This is Doug &amp; Janusz' });
 });
 
 /* the GET Userlist page  */
+// Handles node requests for userlist page,
+// retrieves Mongo db collection, 
+// renders userlist template passing object with data 
 router.get('/userlist', function(req, res) {
 	var db = req.db;
 	var collection = db.get('Usercollection');  // get full collection
@@ -23,11 +28,13 @@ router.get('/userlist', function(req, res) {
 });
 
 /* GET new user page  */
+// simple data-input page with submit button
 router.get('/newuser',  function(req, res) {
 	res.render('newuser', { title: 'Add New User' });
 });
 
 /* POST to Add User Service */
+// (Writer of article commented this section well enough.)
 router.post('/adduser', function(req, res) {
 
     // Set our internal DB variable
@@ -56,4 +63,5 @@ router.post('/adduser', function(req, res) {
     });
 });
 
+// Make changes in router available
 module.exports = router;
