@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 /*  GET Hello World page. */
 // Handles node requests for helloworld subpage, '/', renders helloworld
 router.get('/helloworld', function(req, res)  {
-	res.render('helloworld', {title: 'Hello, World! This is Doug &amp; Janusz' });
+	res.render('helloworld', {title: 'Hello, World! This is Doug & Janusz' });
 });
 
 /* the GET Userlist page  */
