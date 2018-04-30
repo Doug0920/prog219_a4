@@ -1,8 +1,14 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightskyblue;
+  
 }
 
 a {
   color: #00B7FF;
+}
+#btnSubmit {
+  border-radius: 25px;
+  background-color: rgb(247, 247, 141)
 }
